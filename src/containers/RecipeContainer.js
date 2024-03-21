@@ -36,8 +36,8 @@ const RecipeContainer = () => {
 
     return (
     <>
-        <Navbar recipes={recipes} setFilteredRecipes={setRecipes}/>
-        <RecipeList recipes={recipes}/>
+        <Navbar recipes={recipes} setFilteredRecipes={setFilteredRecipes}/>
+        <RecipeList recipes={filteredRecipes}/>
         <RecipeForm recipes={recipes} addRecipe={addRecipe}/>
     </>
 );

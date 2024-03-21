@@ -1,6 +1,7 @@
 const Navbar = ({recipes, setFilteredRecipes}) => {
     
     const handleSubmit = (event) => {
+        event.preventDefault();
         const searchTerm = event.target["searchTerm"].value.toLowerCase();
         const filteredRecipes = recipes.filter(recipe => recipe.cakeName.toLowerCase().includes(searchTerm));
         setFilteredRecipes(filteredRecipes);
