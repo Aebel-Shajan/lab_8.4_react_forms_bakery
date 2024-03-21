@@ -28,11 +28,15 @@ const RecipeContainer = () => {
         }
       ])
 
+    const addRecipe = (recipe)=>{
+        setRecipes([...recipes, recipe])
+    }
+
     return (
     <>
         <Navbar />
         <RecipeList recipes={recipes}/>
-        <RecipeForm />
+        <RecipeForm recipes={recipes} addRecipe={addRecipe}/>
     </>
 );
 }

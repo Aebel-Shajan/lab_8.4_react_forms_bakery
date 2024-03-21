@@ -1,7 +1,7 @@
 const Recipe = ({recipe}) => {
     
-    const listIngredients = recipe.ingredients.map((ingredient) => {
-        return <li>{ingredient}</li>;
+    const listIngredients = recipe.ingredients.map((ingredient, index) => {
+        return <li key={index}>{ingredient}</li>;
     })
     
     return (
@@ -13,5 +13,4 @@ const Recipe = ({recipe}) => {
         </li>
     );
 }
- 
 export default Recipe;
