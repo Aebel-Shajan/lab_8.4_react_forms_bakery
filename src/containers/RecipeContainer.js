@@ -28,13 +28,15 @@ const RecipeContainer = () => {
         }
       ])
 
+    const [filteredRecipes, setFilteredRecipes] = useState([...recipes]);
+
     const addRecipe = (recipe) => {
         setRecipes([...recipes, recipe])
     }
 
     return (
     <>
-        <Navbar />
+        <Navbar recipes={recipes} setFilteredRecipes={setRecipes}/>
         <RecipeList recipes={recipes}/>
         <RecipeForm recipes={recipes} addRecipe={addRecipe}/>
     </>
