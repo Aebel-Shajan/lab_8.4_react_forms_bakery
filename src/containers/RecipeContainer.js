@@ -28,7 +28,7 @@ const RecipeContainer = () => {
         }
       ])
 
-    const addRecipe = (recipe)=>{
+    const addRecipe = (recipe) => {
         setRecipes([...recipes, recipe])
     }
 

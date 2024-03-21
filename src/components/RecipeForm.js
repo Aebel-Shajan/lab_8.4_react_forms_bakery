@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const RecipeForm = ({recipes, addRecipe}) => {
-    const [recipeName, setRecipeName] = useState("");
+    const [cakeName, setcakeName] = useState("");
     const [ingredients, setIngredients] = useState([]);
     const [rating, setRating] = useState(0);
 
@@ -9,7 +9,7 @@ const RecipeForm = ({recipes, addRecipe}) => {
         event.preventDefault();
         if (handleValidation()) {
             const newRecipe = {
-                recipeName,
+                cakeName,
                 ingredients,
                 rating
             }
@@ -21,12 +21,12 @@ const RecipeForm = ({recipes, addRecipe}) => {
 
     const handleValidation = () => {
         let validation = true;
-        if (recipes.find(recipe => recipe.recipeName === recipeName)) {
+        if (recipes.find(recipe => recipe.cakeName === cakeName)) {
             alert("Recipe already exists!")
             validation = false;
         }
 
-        if (recipeName === "" || ingredients.length === 0) {
+        if (cakeName === "" || ingredients.length === 0) {
             alert("Recipe name or ingredients should not be empty!");
             validation = false;
         }
@@ -40,10 +40,10 @@ const RecipeForm = ({recipes, addRecipe}) => {
         <h3>Add New Recipes</h3>
         <input 
             type="text" 
-            name="recipeName" 
+            name="cakeName" 
             placeholder="Enter recipe name: " 
-            value={recipeName}
-            onChange={(event) => setRecipeName(event.target.value)}
+            value={cakeName}
+            onChange={(event) => setcakeName(event.target.value)}
         />
         <input 
             type="text" 
